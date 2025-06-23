@@ -24,3 +24,7 @@ rustler_logger_example-*.tar
 
 # Temporary files, for example, from tests.
 /tmp/
+
+# Rust binary artifacts
+/target/
+/priv/native/librustler_logger_example_nif.so
