@@ -10,5 +10,5 @@ defmodule RustlerLoggerExample.Nif do
 
   def add(_a, _b), do: error()
 
-  def init(_pid), do: error()
+  def logger_init(_pid), do: error()
 end

@@ -9,12 +9,15 @@ defmodule RustlerLoggerExample.Logger.GenServer do
   end
 
   def init(_args) do
-    :ok = RustlerLoggerExample.Nif.init(self())
+    :ok = RustlerLoggerExample.Nif.logger_init(self())
     {:ok, %{}}
   end
 
-  def handle_info(message, state) do
-    Logger.debug(message)
+  def handle_info({level, message}, state) do
+    case level do
+      :debug -> Logger.debug(message)
+    end
+
     {:noreply, state}
   end
 end
